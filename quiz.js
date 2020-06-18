@@ -9,6 +9,7 @@ let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
+let seconds = 30;
 let availableQuesions = [];
 
 let questions = [];
@@ -59,6 +60,22 @@ startGame = () => {
     getNewQuestion();
     game.classList.remove('hidden');
     loader.classList.add('hidden');
+
+    function timer(){
+        var seconds = 30;
+        var timer = setInterval(function(){
+            document.getElementById('time').innerHTML=seconds;
+            seconds--;
+            if (seconds < 1) {
+                clearInterval(timer);
+                return window.location.assign(href='end.html');
+            }
+        }, 1000);
+
+        
+    }
+
+    timer()
 };
 
 getNewQuestion = () => {
@@ -66,6 +83,7 @@ getNewQuestion = () => {
         localStorage.setItem('mostRecentScore', score);
         //go to the end page
         return window.location.assign(href='end.html');
+        seconds = "-";
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
@@ -99,14 +117,21 @@ choices.forEach((choice) => {
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
         }
+        else if (classToApply == 'incorrect') {
+            score = score - 5;
+            seconds = seconds -= 5;
+                
+        }
 
         selectedChoice.parentElement.classList.add(classToApply);
+
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         }, 1000);
     });
+
 });
 
 incrementScore = (num) => {
