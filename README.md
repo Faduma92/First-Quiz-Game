@@ -1,6 +1,6 @@
 ## First Quiz ##
 
-Github pages: https://faduma92.github.io/First-Quiz-Game/
+Github pages:https://faduma92.github.io/First-Quiz-Game/
 
 The user is presented with a landing page which includes a "Start Quiz" button and a "View Highscores" button to view your preivously saved scores. 
 
