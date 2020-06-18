@@ -2,7 +2,7 @@
 
 Github pages: https://faduma92.github.io/First-Quiz-Game/
 
-When you first enter the application the user is presented with a landing page which includes a "Start Quiz" button and a "View Highscores" button to view your preivously saved scores. 
+The user is presented with a landing page which includes a "Start Quiz" button and a "View Highscores" button to view your preivously saved scores. 
 
 After clicking "Start Quiz", the user is presented with 1/5 questions and initializes timer to 30 seconds. 
 
