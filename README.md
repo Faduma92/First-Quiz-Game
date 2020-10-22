@@ -1,4 +1,5 @@
 ## First Quiz ##
+![Screenshot](quizss.png)
 
 Github pages:https://faduma92.github.io/First-Quiz-Game/
 
